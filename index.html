@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>早點名大挑戰 - DEMO版</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header-container">
+        <div class="title-screw" onclick="moveScrewToLadder(this)"></div>
+        
+        <h1>第一關：內務整理</h1>
+        
+        <div class="title-screw" onclick="moveScrewToLadder(this)"></div>
+    </div>
+
+    <p id="mission-text">任務：前往早點名</p>
+
+<div id="game-container">
+        <div id="ladder" onclick="tryExitLevel()">
+            <div class="ladder-rung"></div>
+            <div class="ladder-rail">
+                <div class="screw screw-top"></div> 
+            </div>
+            <div class="ladder-rail">
+                <div id="ladder-missing-screw" class="screw screw-top" style="display: none;"></div>
+            </div>
+        </div>
+
+        <div id="quilt" class="item" onclick="fixQuilt()"></div>
+        <div id="pillow" class="item" onclick="fixPillow()"></div>
+
+        <div id="alarm" class="item clutter" onclick="removeItem(this)"></div>
+        <div id="mask" class="item clutter" onclick="removeItem(this)"></div>
+        <div id="power" class="item clutter" onclick="removeItem(this)"></div>
+        <div id="phone" class="item clutter" onclick="removeItem(this)"></div>
+    </div>
+
+    <div id="image-warning" style="display: none; margin-top: 10px;">
+        <img id="fall-image" src="fall.png" alt="警告：梯子可能會掉落" style="width: 150px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    </div>
+
+    <div id="message-box">
+        <div id="message">內務混亂中！</div>
+        <div id="sub-message">動作快！長官要來了...</div>
+    </div>
+
+    <div id="smartphone-icon" onclick="openPhone()">
+         </div>
+
+    <div id="phone-overlay" style="display: none;">
+        <div id="phone-screen">
+            <div class="phone-status-bar">
+                <span>06:15</span>
+                <span style="float: right;">🔋 12%</span>
+            </div>
+            
+            <button id="close-phone-btn" onclick="closePhone()">✕</button>
+
+            <div id="phone-view-home">
+                <div id="call-app-icon" onclick="showCallScreen()">
+                    📞 <div style="font-size: 14px; margin-top: 5px;">電話</div>
+                </div>
+            </div>
+
+            <div id="phone-view-call" style="display: none;">
+                <p id="call-message">或許可以打給劉區報修...</p>
+                
+                <div id="input-area">
+                    <input type="text" id="repair-code-input" placeholder="輸入區隊長分機" maxlength="5">
+                    <button id="dial-btn" onclick="checkPhoneCode()">撥出</button>
+                </div>
+
+                <p id="final-hint-message" style="display: none;"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
