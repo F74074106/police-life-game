@@ -87,7 +87,7 @@ function moveScrewToLadder(clickedElement) {
     // 🌟 2. 新增檢查：如果還沒打過電話，不能拆螺絲
     if (!isCallMade) {
         // 可以選擇用 alert 彈窗，或是更新下方狀態列
-        alert("公家財產不敢亂動...\n（是不是應該先打電話請示區隊長？）");
+        alert("公家財產不敢亂動...");
         updateStatus(null, "螺絲鎖得很緊，不敢隨便亂拆...");
         return; // 直接結束函數，不執行後面的動作
     }
@@ -204,7 +204,7 @@ function checkPhoneCode() {
         hintMessage.style.display = 'block';
         
         // 提示玩家現在可以去拆螺絲了
-        updateStatus(null, "獲得授權！快去拆標題旁的螺絲！");
+        // updateStatus(null, "獲得授權！快去拆標題旁的螺絲！");
         
     } else {
         alert("您撥的電話號碼是空號，請查明後再撥...");
